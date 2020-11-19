@@ -74,6 +74,7 @@ if (i1 > (i2*i2)){
 } else {
     console.log(false);
 }
+
 if (i1 < (i2*i2*i2)) {
     console.log(true);
 } else {
@@ -82,3 +83,13 @@ if (i1 < (i2*i2*i2)) {
 
 let j: number = 1521;
 // tell if j is divisible by 3 or 5 (as a boolean)
+if ((j % 3) === 0) {
+    console.log(true);
+} else {
+    console.log (false);
+}
+if ((j % 5) === 0) {
+    console.log(true);
+} else {
+    console.log (false);
+}
