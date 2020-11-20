@@ -39,9 +39,6 @@ if ( (credits >= 50) && (isBonus === false )) {
 if (( credits < 50 ) && (isBonus === false)) {
     c = c - 1;
 }
-if ( isBonus === true ) {
-    
-}
 
 // if credits are at least 50,
 // and is_bonus is false decrement c by 2
