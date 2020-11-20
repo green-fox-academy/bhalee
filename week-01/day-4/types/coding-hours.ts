@@ -1,8 +1,8 @@
 'use strict';
 
-let dailyHours: number = 6;
-let workDays: number = 5;
-let semesterWeeks: number = 17;
+let dailyHours:number = 6;
+let workDays:number = 5;
+let semesterWeeks:number = 17;
 let weeklyWorkHours:number = 52;
 
 let semesterCodingHours:number = ( dailyHours * workDays ) * semesterWeeks;
