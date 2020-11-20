@@ -1,10 +1,10 @@
 'use strict';
-
+export{}
 let lineCount: number = 4;
 let star: any = '\*';
 let space: any = ' ';
 
-for (let i: number = 1, j: number = 5; i <= lineCount; i++, j--) {
+for (let i: number = 1, j: number = lineCount + 1; i <= lineCount; i++, j--) {
 
     console.log ((space.repeat(j))+(star.repeat(i))+(star.repeat(i-1)));
 
