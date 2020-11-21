@@ -1,7 +1,55 @@
 'use strict';
 export{}
 let lineCount: number = 7;
+let star:string = '*'
+let star2: string = '*'
 
+
+for (let i:number = 1, j:number = lineCount - i; i <= lineCount / 2; i++, j-- ){
+
+        let space: string = '';
+
+for (let j:number = lineCount - i; j > 0; j--) {
+    space += ' ';
+    
+}
+
+console.log(space+star);
+star += '**';
+
+}
+
+for (let q:number = 1, l:number = lineCount - q; q <= lineCount / 2 ; l--,q++ ){
+
+    let space2: string = ' ';
+
+for (let p:number = lineCount - q, m:number = lineCount - p; m >= 0; p--, m-- ) {
+space2 += ' ';
+
+
+}
+for (let p:number = lineCount / 2 - q; p >= 0; p--) {
+    space2 += '**';
+    
+}
+
+
+console.log(space2+star2);
+
+
+}
+for (let z:number = 1; z < 2 ; z++){
+
+    let space2: string = '';
+    
+
+    for (let z:number = 1; z < lineCount ; z++){
+
+    space2 += ' ';
+
+    }
+    console.log(space2+star2);
+}
 
 
 // Write a program that draws a
