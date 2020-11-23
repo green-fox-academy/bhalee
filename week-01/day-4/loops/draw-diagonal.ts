@@ -41,7 +41,7 @@ for ( let i:number = lineCount - 2, space2: string = ''; i > 0; i--, space2 + ' 
     console.log (star+space2+star+space3+star);
 
 
-}
+
 // Write a program that draws a
 // square like this:
 //
