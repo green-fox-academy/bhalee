@@ -11,4 +11,3 @@ function reverse(toBeReversed): string {
 }
 console.log(reverse(toBeReversed));
 
-export = reverse;
