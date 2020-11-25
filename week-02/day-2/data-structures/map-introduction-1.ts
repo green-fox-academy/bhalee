@@ -11,7 +11,6 @@ myMap['99'] = 'c'
 myMap['65'] = 'A'
 myMap['66'] = 'B'
 myMap['67'] = 'C'
-myMap['100'] = 'C'
 
 console.log(Object.keys(myMap));
 
@@ -27,17 +26,30 @@ console.log(myMap[99]);
 
 delete myMap['97'];
 
-let keys = Object.keys(myMap);
 
-for(let i:number = 0; i < keys.length; i++){
-  let key = keys[i];
-  if ( key === '100' ) {
-    console.log('yaaay we have 100');
-    let asd = true;
+// nem múkodik
+
+// irassuk ki az ertekeket a kulcsok segitsegevel
+
+
+
+function isItIncluded(myNumber: string) {
+  let checker: boolean = false;
+for (const key in myMap)
+  
+if (key === myNumber) {
+      checker = true;
+    }
+  
+
+  if (checker) {
+    console.log(`is in the array`)
+  } else {
+    console.log('No luck');
   }
+  
 }
-
-// nemtom
+isItIncluded('100')
 
 
 myMap = {};
