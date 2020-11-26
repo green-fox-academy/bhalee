@@ -19,4 +19,4 @@ function square(x) {
     ctx.fillRect(a, b, x, x);
   }
 }
-square(100);
+square(50);
