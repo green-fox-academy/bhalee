@@ -29,33 +29,25 @@ let dots2 = [
 // console.log(dots1[0][0])
 // console.log(dots1[0][1])
 
-function draw1(x, y) {
-  let alma = dots1;
-  for (let q= 0, i = 0; q < 2 ; q++){
-    
-    
-  for (let i = 0; i < alma.length; i++) {
-    x = alma[i][0];
-    y = alma[i][1];
+function drawTheDots(x, y) {
+  let dots = dots1;
+  for (let q = 0; q < 2; q++) {
+    for (let i = 0; i < dots.length; i++) {
+      x = dots[i][0];
+      y = dots[i][1];
+    }
+
+    ctx.strokeStyle = 'green';
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+
+    for (let i = 0; i < dots.length; i++) {
+      x = dots[i][0];
+      y = dots[i][1];
+      ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+    dots = dots2;
   }
-
-  ctx.strokeStyle = 'green';
-  ctx.beginPath();
-  ctx.moveTo(x, y);
-
-  for (let i = 0; i < alma.length; i++) {
-    x = alma[i][0];
-    y = alma[i][1];
-
-    ctx.lineTo(x, y);
-    console.log(x);
-    console.log(y);
-  }
-  ctx.stroke();
-  alma = dots2;
 }
-
-}
-
- draw1();
-
+drawTheDots();
