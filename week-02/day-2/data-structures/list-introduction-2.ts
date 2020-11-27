@@ -4,7 +4,7 @@ let listB: string[] = [...listA];
 if (listA.includes('Durian')) {
   console.log('yes');
 } else {
-  console.log('nooo');
+  console.log('nooope');
 }
 listB.splice(3, 1);
 
