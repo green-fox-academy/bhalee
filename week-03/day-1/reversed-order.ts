@@ -1,5 +1,5 @@
 // Create a method that decrypts reversed-order.txt
-('use strict');
+'use strict'
 export {};
 const fs = require('fs');
 function fileName(x): void {
