@@ -23,7 +23,7 @@ export class Counter {
   }
 
   public get() {
-    let stringNumber: string | number = this._number;
+    let stringNumber: number = this._number;
     return stringNumber;
   }
 
