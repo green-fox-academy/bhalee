@@ -1,10 +1,10 @@
 'use strict';
 
 class BlogPost {
-  _authorName: string;
-  _title: string;
-  _text: string;
-  _publicationDate: string;
+  private _authorName: string;
+  private _title: string;
+  private _text: string;
+  private _publicationDate: string;
 
   constructor(
     title: string,
@@ -25,4 +25,3 @@ let oneEnginer = new BlogPost('One Engineer Is Trying to Get IBM to Reckon With 
 console.log(ipsum);
 console.log(waitButWhy);
 console.log(oneEnginer);
-
