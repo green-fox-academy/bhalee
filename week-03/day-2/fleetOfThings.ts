@@ -1,5 +1,6 @@
 import { Thing } from './thing';
 import { Fleet } from './fleet';
+import { compileFunction } from 'vm';
 
 let fleet = new Fleet();
 
@@ -23,6 +24,8 @@ fleet.add(milk)
 fleet.add(remove)
 fleet.add(stand)
 fleet.add(eat)
+eat.complete()
+stand.complete()
 
 
 
