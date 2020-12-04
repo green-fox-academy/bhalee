@@ -14,13 +14,13 @@ class Animal {
   public eat() {
     this._hunger--;
     console.log(`${this._animal} ate`);
-    console.log(cat._hunger);
+    console.log('hunger level: '+cat._hunger);
     
   }
   public drink() {
     this._thirst--;
     console.log(`${this._animal} drank`);
-    console.log(cat._thirst);
+    console.log('thirst level: '+cat._thirst);
   }
   public play() {
     this._hunger++;
@@ -35,7 +35,7 @@ class Animal {
     if (this._thirst > 52 ){
       console.log(`Your ${this._animal} is died of thirst!`)
     }
-    console.log(cat._hunger, cat._thirst);
+    console.log('hunger level: '+cat._hunger+' thirst level: '+cat._thirst);
   }
 }
 let cat = new Animal('Cat');

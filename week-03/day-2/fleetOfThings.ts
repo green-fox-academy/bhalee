@@ -1,6 +1,5 @@
 import { Thing } from './thing';
 import { Fleet } from './fleet';
-import { compileFunction } from 'vm';
 
 let fleet = new Fleet();
 
