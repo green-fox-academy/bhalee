@@ -8,10 +8,12 @@ export class Sharpie{
     this._width = width;
     this._inkAmount = 100;
   }
+  
   public use(){
     this._inkAmount--;
   }
 }
+
 let sword = new Sharpie('silver', 100)
 sword.use()
 console.log(sword);

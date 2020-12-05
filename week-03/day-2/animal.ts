@@ -22,6 +22,7 @@ class Animal {
     console.log(`${this._animal} drank`);
     console.log('thirst level: '+cat._thirst);
   }
+
   public play() {
     this._hunger++;
     this._thirst++;
@@ -38,6 +39,7 @@ class Animal {
     console.log('hunger level: '+cat._hunger+' thirst level: '+cat._thirst);
   }
 }
+
 let cat = new Animal('Cat');
 cat.play();
 cat.eat();

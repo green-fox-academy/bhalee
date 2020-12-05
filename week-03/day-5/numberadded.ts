@@ -4,7 +4,9 @@ function numberAdded(n: number) {
   if (n > 100) {
     return n;
   }
+  
   n += 1;
   return numberAdded(n);
 }
+
 console.log(numberAdded(3));
