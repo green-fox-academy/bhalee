@@ -23,24 +23,18 @@ class SharpieSet {
       this.countUsable();
     }
   }
-  public countUsable():boolean {
+  public countUsable(): boolean {
     console.log('you cannot use this');
-    
+
     return (this._usabale = false);
   }
   public removeTrash() {
-
-    
-    
     // if (this._usabale === false){
-      
-    }
   }
-
+}
 
 let pen = new SharpieSet('black', 100);
-pen.use()
-pen.use()
-pen.use()
+pen.use();
+pen.use();
+pen.use();
 console.log(pen);
-

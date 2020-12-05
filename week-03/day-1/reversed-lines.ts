@@ -3,7 +3,7 @@ export {};
 // Create a method that decrypts reversed-lines.txt
 
 const fs = require('fs');
-function fileName(x): void {
+function fileName(x:string): void {
   try {
     let fileContent: string = fs.readFileSync(x, 'utf-8').toString();
     let decryptsText: string = fileContent.split('').reverse().join('').split('\r').reverse().join('');

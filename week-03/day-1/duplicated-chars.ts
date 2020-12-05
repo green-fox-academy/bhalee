@@ -2,7 +2,7 @@
 export {};
 // Create a method that decrypts duplicated-chars.txt
 const fs = require('fs');
-function fileName(x): void {
+function fileName(x:string): void {
   try {
     let fileContent: string = fs.readFileSync(x, 'utf-8').toString();
     let fileLetters = fileContent.split('');

@@ -2,7 +2,7 @@
 'use strict'
 export {};
 const fs = require('fs');
-function fileName(x): void {
+function fileName(x:string): void {
   try {
     let fileContent: string = fs.readFileSync(x, 'utf-8').toString();
     let decryptsText = fileContent.split('\n\r').reverse().join('');

@@ -5,7 +5,7 @@ export {};
 // Write a function that returns an array with the unique IP adresses.
 // Write a function that returns the GET / POST request ratio.
 const fs = require('fs');
-function fileName(x): string[] {
+function fileName(x:string): string[] {
   try {
     let fileContent: string = fs.readFileSync(x, 'utf-8').toString();
     let decryptsText:string[] = fileContent.split('   ');
