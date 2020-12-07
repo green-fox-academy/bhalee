@@ -1,5 +1,5 @@
 import{Person} from './person'
-class Mentor extends Person{
+export class Mentor extends Person{
 
 protected _level:string;
 constructor (name?:string, age?:number, gender?:string, level?:string){

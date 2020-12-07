@@ -1,6 +1,6 @@
 import { Person } from './person';
 
-class Student extends Person {
+export class Student extends Person {
   protected _previousOrganizatio: string;
   protected _skippedDays: number;
 

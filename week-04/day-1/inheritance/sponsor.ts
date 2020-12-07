@@ -1,5 +1,5 @@
 import { Person } from './person';
-class Sponsor extends Person {
+export class Sponsor extends Person {
   protected _company: string;
   protected _hiredStudents: number;
 
