@@ -12,7 +12,7 @@ class Garden {
     this._gardenPlants.push(...[new Plants(plantName, plantType)]);
   }
 
-  info() {
+  info():void {
     for (let i: number = 0; i < this._gardenPlants.length; i++) {
       if (this._gardenPlants[i].infoWaterAmount() < 5) {
         console.log(`The ${this._gardenPlants[i].infoName()} ${this._gardenPlants[i].infoType()} needs water`);
@@ -21,7 +21,7 @@ class Garden {
       }
     }
   }
-  watering(waterAmount: number) {
+  watering(waterAmount: number):void {
     console.log(`Watering with ${waterAmount}`);
     let needWater: number = 0;
     for (let i: number = 0; i < this._gardenPlants.length; i++) {
