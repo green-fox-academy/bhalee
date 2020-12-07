@@ -9,11 +9,11 @@ export class Cohort {
     this._mentors = [];
   }
 
-  addStudent(Student:string):void{
+  addStudent(Student):void{
     this._students.push(Student);
   }
 
-  addMentor(Mentor:string):void{
+  addMentor(Mentor):void{
     this._mentors.push(Mentor)
   }
   info():void{

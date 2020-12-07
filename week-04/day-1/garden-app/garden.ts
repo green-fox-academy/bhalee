@@ -32,7 +32,7 @@ class Garden {
 
     for (let i: number = 0; i < this._gardenPlants.length; i++) {
       if (this._gardenPlants[i].infoWaterAmount() < 5 && this._gardenPlants[i].infoType() === 'Tree') {
-         this._gardenPlants[i].addwater((waterAmount / needWater) * 0.4);
+        this._gardenPlants[i].addwater((waterAmount / needWater) * 0.4);
       }
 
       if (this._gardenPlants[i].infoWaterAmount() < 5 && this._gardenPlants[i].infoType() === 'Flower') {

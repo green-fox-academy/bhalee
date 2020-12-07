@@ -3,7 +3,7 @@
 // it contains a list of Sharpie
 // countUsable() -> sharpie is usable if it has ink in it
 // removeTrash() -> removes all unusable sharpies
-// import {Sharpie} from '../day-2/sharpie'
+import {Sharpie} from '../day-2/sharpie'
 class SharpieSet {
   private _color: string;
   private _width: number;
@@ -29,7 +29,8 @@ class SharpieSet {
     return (this._usabale = false);
   }
   public removeTrash() {
-    // if (this._usabale === false){
+   if (this._usabale === false){
+     
   }
 }
 
