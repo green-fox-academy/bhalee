@@ -8,4 +8,13 @@ export class Trees{
     this._waterAmount = 10;
 
   }
+  infoName ():string{
+    return this._name
+  }
+  infoWaterAmount ():number{
+    return this._waterAmount
+  }
+  addwater (amountOfWater:number){
+    return this._waterAmount += amountOfWater;
+  }
 }

@@ -5,7 +5,17 @@ export class Flowers{
 
   constructor (name:string){
     this._name = name;
-    this._waterAmount = 5;
-
+    this._waterAmount = 0;
+  }
+  infoName ():string{
+    return this._name
+  }
+  infoWaterAmount ():number{
+    return this._waterAmount
+  }
+  addwater (amountOfWater:number){
+    return this._waterAmount += amountOfWater;
   }
 }
+
+
