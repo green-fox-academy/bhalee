@@ -1,7 +1,7 @@
 'use strict';
 import {EggLaying} from './egglaying'
 
-export class Bird extends EggLaying{
+export class Reptile extends EggLaying{
   constructor(name:string,age?:number,borned?:string, petable?:boolean){
     super(name,age, borned,petable)
     this._name = name;
@@ -14,6 +14,6 @@ export class Bird extends EggLaying{
     return this._name;
   }
   eat(): string {
-    return 'I like eat seeds';
+    return 'I like eat meaty foods';
   }
 }
