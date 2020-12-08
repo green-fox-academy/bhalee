@@ -1,5 +1,5 @@
 'use strict';
-interface Flyable {
+export interface Flyable {
   land(): string;
   fly(): string;
   takeoff(): string;
