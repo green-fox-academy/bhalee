@@ -1,7 +1,7 @@
 'use strict';
 import {StringInstrument} from './stringedinstrument';
 
-export class ElectricGuitar extends StringInstrument {
+export class Violin extends StringInstrument {
 
   constructor (numberOfStrings?:number){
     super()
