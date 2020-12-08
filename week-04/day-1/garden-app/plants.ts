@@ -8,16 +8,16 @@ export class Plants {
     this._type = type;
     this._waterAmount = 0;
   }
-  infoName(): string {
+  public infoName(): string {
     return this._name;
   }
-  infoWaterAmount(): number {
+  public infoWaterAmount(): number {
     return this._waterAmount;
   }
-  infoType(): string {
+  public infoType(): string {
     return this._type;
   }
-  addwater(amountOfWater: number) {
+  public addwater(amountOfWater: number) {
     return (this._waterAmount += amountOfWater);
   }
 }

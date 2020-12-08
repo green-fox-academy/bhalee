@@ -8,11 +8,11 @@ export class Garden {
     this._gardenPlants = [];
   }
 
-  addPlant(plantName: string, plantType): void {
+  public addPlant(plantName: string, plantType:string): void {
     this._gardenPlants.push(...[new Plants(plantName, plantType)]);
   }
 
-  info():void {
+  public info():void {
     for (let i: number = 0; i < this._gardenPlants.length; i++) {
       if (this._gardenPlants[i].infoWaterAmount() < 5) {
         console.log(`The ${this._gardenPlants[i].infoName()} ${this._gardenPlants[i].infoType()} needs water`);
@@ -21,7 +21,7 @@ export class Garden {
       }
     }
   }
-  watering(waterAmount: number):void {
+  public watering(waterAmount: number):void {
     console.log(`Watering with ${waterAmount}`);
     let needWater: number = 0;
     for (let i: number = 0; i < this._gardenPlants.length; i++) {
