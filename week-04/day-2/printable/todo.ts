@@ -17,7 +17,7 @@ export class Todo implements Printable {
     this._done = true;
   }
   printAllFields(): void {
-    console.log(`Task: ${todos[0]._task} | Priority: ${todos[0]._priority} | Done: ${todos[0]._done}`);
+    console.log(`Task: ${this._task} | Priority: ${this._priority} | Done: ${this._done}`);
   }
 }
 
