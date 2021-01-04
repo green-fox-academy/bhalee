@@ -1,0 +1,19 @@
+*{
+margin: 0;
+}
+.container {
+  height: 300px;
+  width: 600px;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-evenly;
+  background: #FFD62A;
+}
+.purple {
+  background: #B02AFF;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  z-index: 1;
+  align-self: center;
+}
