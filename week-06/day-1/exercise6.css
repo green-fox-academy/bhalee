@@ -1,0 +1,87 @@
+*{
+  margin: 0px
+}
+.page{
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  margin: 10px;
+  
+}
+.head{
+  display: flex;
+  padding: 0;
+  width: 100%;
+  background-color: purple;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.navLeft{
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+.navRight{
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.navLink{
+background-color: aqua;
+height: 30px;
+width: 150px;
+margin: 5px;
+}
+.navBox{
+  background-color: aqua;
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+  justify-content: flex-end;
+}
+.main{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: yellow;
+  width: 300px;
+  flex-grow: 10;
+
+}
+.prologText{
+  width: 100%;
+
+}
+.redbox{
+background-color: red;
+width: 100px;
+height: 100px;
+margin: 5px;
+
+}
+.mainText{
+  width: 50%;
+}
+.side{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: green;
+  width: 300px;
+  flex-grow: 1;
+}
+.sideLink{
+  margin-top: 2px;
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: grey;
+  height: 30px;
+  width: 100%;
+}
+.sideText{
+  margin-top: 2px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
