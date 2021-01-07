@@ -11,7 +11,7 @@ export function anagram(string1?: any, string2?: any): boolean {
     for (let i: number = 0; i < string1.length; i++) {
       string1Value = string1[i].toString().toLowerCase().split('').reverse().join('');
       for (let j: number = 0; j < string2.length; j++) {
-        if (string1Value === string2[j].toString().toLowerCase().split('').join('')) {
+        if (string1Value === string2[j].toString().toLowerCase()) {
           isHave = true;
         }
       }
