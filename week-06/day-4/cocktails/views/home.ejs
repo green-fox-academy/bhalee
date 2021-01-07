@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/static/style.css" />
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <h1><%= cocktailsTitle %></h1>
+    <table>
+      <tr>
+        <th><%= name %></th>
+        <th><%= price %></th>
+      </tr>
+      <% for(let i = 0; i < cocktails.length; i++) { %>
+      <tr>
+        <th>
+          <%= cocktails[i].name %>
+          <p class="contains"><%= cocktails[i].contains %></p>
+        </th>
+        <th><%= cocktails[i].price %></th>
+      </tr>
+      <% } %>
+    </table>
+    <% for (let i = 0; i < cocktails.length; i++){ %> 
+      <% let itHave = false; %> 
+      <% for (let p = 0; p < cocktails[i].contains.lenght; p++){ %> 
+        <%if (alcoholList[1] === coctails.contains[p]){ %> 
+          <% itHave = true; %> <% } %>
+    <!-- <% if (itHave){ %> -->
+    <%= cocktails[i].name %>
+    <!-- <% } %> -->
+    <% } %> <%} %>
+  </body>
+</html>

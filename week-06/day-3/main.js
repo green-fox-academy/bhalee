@@ -29,6 +29,8 @@ const buttonUp = document.querySelector('#up');
 const buttonDown = document.querySelector('#down');
 const buttonRight = document.querySelector('#right');
 const buttonRemove = document.querySelector('#remove');
+const textButton = document.querySelector('#textButton');
+
 
 buttonDown.onclick = () => {
   li = document.querySelectorAll('li');
@@ -91,3 +93,13 @@ buttonRight.onclick = () => {
     list.splice(select, 1);
   }
 };
+textButton.onclick = () => {
+  const liList = document.createElement('li');
+  const text = document.querySelector('#text');
+  list.push(text.value);
+  liList.innerText = text.value;
+  ulShopList[0].appendChild(liList);
+  text.value = '';
+  console.log(list);
+
+}
