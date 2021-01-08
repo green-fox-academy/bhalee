@@ -11,8 +11,8 @@ let imageDest = [
   `Sloth ipsum, dolor sit amet consectetur adipisicing elit. Voluptate modi deleniti iste laboriosam quasi dolores magnam ipsum eligendi obcaecati blanditiis repellendus id saepe tempore, asperiores eaque maxime exercitationem ducimus nisi.`,
   `Africa ipsum, dolor sit amet consectetur adipisicing elit. Voluptate modi deleniti iste laboriosam quasi dolores magnam ipsum eligendi obcaecati blanditiis repellendus id saepe tempore, asperiores eaque maxime exercitationem ducimus nisi.`,
 ];
-let counter = 0;
 
+let counter = 0;
 const imageShow = document.querySelector('#image-show');
 const theImage = document.createElement('img');
 theImage.setAttribute('id', 'theImage');
@@ -44,7 +44,6 @@ for (let i = 0; i < imageList.length; i++) {
   } else {
     imgIcons.setAttribute('class', 'notSelected');
   }
-  
   icons.appendChild(iconDiv);
   iconDiv.appendChild(imgIcons);
 }
@@ -57,13 +56,11 @@ for (let i = 0; i < theIcons.length; i++) {
     theIcons[i].onclick = () => {
     deleteTitle.remove();
     
-    title.setAttribute('class', 'imageTitle');
     title.innerHTML = imageTitle[i];
     imageDescription.appendChild(title);
 
     deleteDest.remove();
     
-    description.setAttribute('class', 'imageDescription');
     description.innerHTML = imageDest[i];
     imageDescription.appendChild(description);
 
@@ -79,11 +76,8 @@ for (let i = 0; i < theIcons.length; i++) {
   };
 }
 
-const leftButton = document.querySelector('#left-button');
 const rightButton = document.querySelector('#right-button');
-
 rightButton.onclick = () => {
-  
   deleteTitle.remove();
   deleteDest.remove();
 
@@ -95,12 +89,9 @@ rightButton.onclick = () => {
     counter += 1;
   }
 
-  title.setAttribute('class', 'imageTitle');
   title.innerHTML = imageTitle[counter];
   imageDescription.appendChild(title);
 
-  
-  description.setAttribute('class', 'imageDescription');
   description.innerHTML = imageDest[counter];
   imageDescription.appendChild(description);
 
@@ -109,8 +100,8 @@ rightButton.onclick = () => {
   imageShow.appendChild(theImage);
 };
 
+const leftButton = document.querySelector('#left-button');
 leftButton.onclick = () => {
-  
   deleteTitle.remove();
   deleteDest.remove();
 
@@ -122,11 +113,9 @@ leftButton.onclick = () => {
     counter -= 1;
   }
 
-  title.setAttribute('class', 'imageTitle');
   title.innerHTML = imageTitle[counter];
   imageDescription.appendChild(title);
 
-  description.setAttribute('class', 'imageDescription');
   description.innerHTML = imageDest[counter];
   imageDescription.appendChild(description);
 
