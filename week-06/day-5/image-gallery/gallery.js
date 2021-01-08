@@ -32,33 +32,37 @@ imageDescription.appendChild(description);
 
 for (let i = 0; i < imageList.length; i++) {
   const icons = document.querySelector('#image-gallery-icons');
-  const theIcons = document.createElement('img');
-  theIcons.setAttribute('id', 'theIcons');
-  theIcons.setAttribute('src', imageList[i]);
-  if (i === 0) {
-    theIcons.setAttribute('class', 'selected');
-  } else {
-    theIcons.setAttribute('class', 'notSelected');
-  }
 
-  icons.appendChild(theIcons);
+  const iconDiv = document.createElement('div');
+  iconDiv.setAttribute('class', 'iconDiv');
+
+  const imgIcons = document.createElement('img');
+  imgIcons.setAttribute('id', 'theIcons');
+  imgIcons.setAttribute('src', imageList[i]);
+  if (i === 0) {
+    imgIcons.setAttribute('class', 'selected');
+  } else {
+    imgIcons.setAttribute('class', 'notSelected');
+  }
+  
+  icons.appendChild(iconDiv);
+  iconDiv.appendChild(imgIcons);
 }
 
 const theIcons = document.querySelectorAll('#theIcons');
+const deleteTitle = document.querySelector('.imageTitle');
+const deleteDest = document.querySelector('.imageDescription');
 
 for (let i = 0; i < theIcons.length; i++) {
-  theIcons[i].onclick = () => {
-    const deleteTitle = document.querySelector('.imageTitle');
+    theIcons[i].onclick = () => {
     deleteTitle.remove();
-    const imageDescription = document.querySelector('#image-description');
-    const title = document.createElement('h1');
+    
     title.setAttribute('class', 'imageTitle');
     title.innerHTML = imageTitle[i];
     imageDescription.appendChild(title);
 
-    const deleteDest = document.querySelector('.imageDescription');
     deleteDest.remove();
-    const description = document.createElement('p');
+    
     description.setAttribute('class', 'imageDescription');
     description.innerHTML = imageDest[i];
     imageDescription.appendChild(description);
@@ -79,10 +83,8 @@ const leftButton = document.querySelector('#left-button');
 const rightButton = document.querySelector('#right-button');
 
 rightButton.onclick = () => {
-  const deleteTitle = document.querySelector('.imageTitle');
+  
   deleteTitle.remove();
-
-  const deleteDest = document.querySelector('.imageDescription');
   deleteDest.remove();
 
   theIcons[counter].setAttribute('class', 'notSelected');
@@ -93,13 +95,11 @@ rightButton.onclick = () => {
     counter += 1;
   }
 
-  const imageDescription = document.querySelector('#image-description');
-  const title = document.createElement('h1');
   title.setAttribute('class', 'imageTitle');
   title.innerHTML = imageTitle[counter];
   imageDescription.appendChild(title);
 
-  const description = document.createElement('p');
+  
   description.setAttribute('class', 'imageDescription');
   description.innerHTML = imageDest[counter];
   imageDescription.appendChild(description);
@@ -110,10 +110,8 @@ rightButton.onclick = () => {
 };
 
 leftButton.onclick = () => {
-  const deleteTitle = document.querySelector('.imageTitle');
+  
   deleteTitle.remove();
-
-  const deleteDest = document.querySelector('.imageDescription');
   deleteDest.remove();
 
   theIcons[counter].setAttribute('class', 'notSelected');
@@ -124,13 +122,10 @@ leftButton.onclick = () => {
     counter -= 1;
   }
 
-  const imageDescription = document.querySelector('#image-description');
-  const title = document.createElement('h1');
   title.setAttribute('class', 'imageTitle');
   title.innerHTML = imageTitle[counter];
   imageDescription.appendChild(title);
 
-  const description = document.createElement('p');
   description.setAttribute('class', 'imageDescription');
   description.innerHTML = imageDest[counter];
   imageDescription.appendChild(description);
