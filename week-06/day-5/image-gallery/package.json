@@ -1,0 +1,21 @@
+{
+  "name": "image-gallery",
+  "version": "1.0.0",
+  "description": "image gallery(html,javascript,css)",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "image",
+    "gallery",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "bhalee",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^14.14.20"
+  }
+}

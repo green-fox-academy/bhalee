@@ -1,0 +1,133 @@
+body {
+  background-image: linear-gradient(to right, grey 0%, #D0D0D0 50%,  grey 100%);
+  display: flex;
+  justify-content: center;
+
+}
+
+#image-gallery-main {
+  display: flex;
+  flex-direction: column;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+  width: fit-content;
+  margin-top: 10%;
+
+}
+
+#image-gallery-slide {
+  display: flex;
+  flex-direction: row;
+
+  width: fit-content;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  width: 50px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.button:hover .arrow{
+  opacity: 0.3;
+
+}
+
+
+#right-button {
+  transform: rotateY(180deg);
+}
+
+
+#image-box {
+  height: 300px;
+  background-color: black;
+}
+
+#image-gallery-icons {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.notSelected{
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  border: 3px solid white;
+  border-radius: 0.2rem;
+  -webkit-box-shadow: 0 8px 6px -6px #222;
+  -moz-box-shadow: 0 8px 6px -6px #222;
+  box-shadow: 0 8px 6px -6px #222;
+}
+
+.selected{
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  margin-top: 1px;
+  border: 3px solid white;
+  border-radius: 0.2rem;
+  -webkit-box-shadow: 0 8px 6px -6px #222;
+  -moz-box-shadow: 0 8px 6px -6px #222;
+  box-shadow: 0 8px 6px -2px #222;
+}
+
+#theIcons:hover{
+  cursor: pointer;
+  margin-top: 1px;
+  -webkit-box-shadow: 0 8px 6px -6px #222;
+  -moz-box-shadow: 0 8px 6px -6px #222;
+  box-shadow: 0 8px 6px -2px #222;
+}
+
+#image-description{
+  order: 2;
+  margin-top: -100px;
+  background-color:rgba(0,0,0,0.6);
+  height: 100px;
+  overflow:hidden;
+}
+
+.imageTitle{
+  text-transform: uppercase;
+  font-size: 20px;
+  margin: 0;
+  margin-left: 10px;
+  margin-top: 10px;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.imageDescription{
+  max-width: 650px;
+  color: grey;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  margin:0;
+  margin-left: 10px;
+}
+#image-show{
+  display: flex;
+  flex-direction: column;
+}
+
+#theImage{
+height: 300px;
+order:1;
+}
+
+#image-box{
+  min-width: 650px;
+}
