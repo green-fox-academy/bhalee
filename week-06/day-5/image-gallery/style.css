@@ -42,28 +42,43 @@ body {
 
 }
 
-
 #right-button {
   transform: rotateY(180deg);
 }
-
 
 #image-box {
   height: 300px;
   background-color: black;
 }
 
+#image-gallery-icons-main{
+  display: flex;
+  justify-content: center;
+}
+
 #image-gallery-icons {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 10px;
   justify-content: center;
+  max-width: 635px;
+}
+
+.iconDiv:nth-child(10) {
+  margin: 0;
+  margin-left: 8px;
+}
+
+.iconDiv:nth-child(17n+17) {
+  margin: 0;
+  margin-left: 8px;
 }
 
 .notSelected{
   object-fit: cover;
   height: 50px;
   width: 50px;
-  margin: 5px;
+  margin: 6px;
   border: 4px solid white;
   border-radius: 0.2rem;
   -webkit-box-shadow: 0 8px 6px -6px #222;
