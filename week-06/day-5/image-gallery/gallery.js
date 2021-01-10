@@ -29,12 +29,17 @@ for (let i = 0; i < imageList.length; i++) {
   imgIcons.setAttribute('id', 'theIcons');
   imgIcons.setAttribute('src', imageList[i].url);
   imgIcons.setAttribute('loading', 'lazy');
+  const mouseOn = document.createElement('p');
+  mouseOn.setAttribute ('class', 'notVisible');
+  mouseOn.setAttribute ('id', 'tooltip');
+  mouseOn.innerText = imageList[i].title;
   if (i === 0) {
     imgIcons.setAttribute('class', 'selected');
   } else {
     imgIcons.setAttribute('class', 'notSelected');
   }
   icons.appendChild(iconDiv);
+  iconDiv.appendChild(mouseOn);
   iconDiv.appendChild(imgIcons);
 }
 
@@ -111,3 +116,31 @@ leftButton.onclick = () => {
   theImage.setAttribute('src', imageList[counter].url);
   imageShow.appendChild(theImage);
 };
+
+for (let i = 0; i < theIcons.length; i++) {
+  const tooltip = document.querySelectorAll('#tooltip')
+  theIcons[i].onmouseenter = () => {
+  tooltip[i].setAttribute ('class', 'visible');
+
+  }
+  theIcons[i].onmouseleave = () =>{
+    tooltip[i].setAttribute ('class', 'notVisible');
+  }
+}
+
+const imageGalleryMain = document.querySelector('#image-gallery-main');
+const bigImage = document.createElement('img');
+theImage.onclick = () => {
+  // let bigImage = theImage.cloneNode(true);
+  let selected = document.querySelector('.selected')
+  let toBigImage = selected.getAttribute('src')
+  bigImage.setAttribute('id','bigImage')
+  bigImage.setAttribute('src', toBigImage)
+  imageGalleryMain.appendChild(bigImage)
+};
+
+bigImage.onclick = () => {
+  bigImage.remove()
+}
+
+
