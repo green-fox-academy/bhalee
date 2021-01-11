@@ -24,7 +24,6 @@ body {
 #image-gallery-slide {
   display: flex;
   flex-direction: row;
-
   width: fit-content;
   box-shadow: 0 20px 15px 0 rgba(0, 0, 0, 0.2), 0 20px 15px 0 rgba(0, 0, 0, 0.19);
 }
@@ -121,13 +120,13 @@ body {
   font-size: 20px;
   margin: 0;
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
   color: white;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .imageDescription{
-  max-width: 620px;
+  max-width: 550px;
   color: grey;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 13px;
