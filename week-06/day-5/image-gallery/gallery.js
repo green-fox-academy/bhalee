@@ -68,11 +68,25 @@ for (let i = 0; i < theIcons.length; i++) {
     theImage.setAttribute('src', toShow);
   };
 }
+function removeText(){
+  deleteTitle.remove();
+  deleteDest.remove();
+}
+function buttonsClick(){
+  title.innerHTML = imageList[counter].title;
+  imageDescription.appendChild(title);
+
+  description.innerHTML = imageList[counter].dest;
+  imageDescription.appendChild(description);
+
+  theIcons[counter].setAttribute('class', 'selected');
+  theImage.setAttribute('src', imageList[counter].url);
+  imageShow.appendChild(theImage);
+}
 
 const rightButton = document.querySelector('#right-button');
 rightButton.onclick = () => {
-  deleteTitle.remove();
-  deleteDest.remove();
+  removeText();
 
   theIcons[counter].setAttribute('class', 'notSelected');
 
@@ -81,23 +95,12 @@ rightButton.onclick = () => {
   } else {
     counter += 1;
   }
-
-  title.innerHTML = imageList[counter].title;
-  imageDescription.appendChild(title);
-
-  description.innerHTML = imageList[counter].dest;
-  imageDescription.appendChild(description);
-
-  theIcons[counter].setAttribute('class', 'selected');
-  theImage.setAttribute('src', imageList[counter].url);
-  imageShow.appendChild(theImage);
+  buttonsClick()
 };
 
 const leftButton = document.querySelector('#left-button');
 leftButton.onclick = () => {
-  deleteTitle.remove();
-  deleteDest.remove();
-
+  removeText();
   theIcons[counter].setAttribute('class', 'notSelected');
 
   if (counter === 0) {
@@ -105,17 +108,7 @@ leftButton.onclick = () => {
   } else {
     counter -= 1;
   }
-
-  title.innerHTML = imageList[counter].title;
-  imageDescription.appendChild(title);
-
-  description.innerHTML = imageList[counter].dest;
-  imageDescription.appendChild(description);
-
-  theIcons[counter].setAttribute('class', 'selected');
-
-  theImage.setAttribute('src', imageList[counter].url);
-  imageShow.appendChild(theImage);
+  buttonsClick()
 };
 
 for (let i = 0; i < theIcons.length; i++) {
