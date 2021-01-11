@@ -8,7 +8,7 @@ theImage.setAttribute('id', 'theImage');
 theImage.setAttribute('src', imageList[0].url);
 imageShow.appendChild(theImage);
 
-const imageGalleryMain = document.querySelector('#image-gallery-main');
+const body = document.querySelector('body');
 const imageDescription = document.querySelector('#image-description');
 const title = document.createElement('h1');
 title.setAttribute('class', 'imageTitle');
@@ -127,7 +127,7 @@ theImage.onclick = () => {
   const toBigImage = selected.getAttribute('src');
   bigImage.setAttribute('id', 'bigImage');
   bigImage.setAttribute('src', toBigImage);
-  imageGalleryMain.appendChild(bigImage);
+  body.appendChild(bigImage);
 };
 
 bigImage.onclick = () => {

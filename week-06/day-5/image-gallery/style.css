@@ -166,8 +166,9 @@ justify-content: center;
 .notVisible{
   display: none;
 }
+
 #bigImage{
-  margin-top: -50px;
+  margin-top: 50px;
   position: fixed;
   box-shadow: 0 20px 15px 0 rgba(0, 0, 0, 0.2), 0 20px 15px 0 rgba(0, 0, 0, 0.19);
 }
