@@ -1,5 +1,5 @@
 'use strict';
-import {imageList} from './imageList.js';
+import { imageList } from './imageList.js';
 
 let counter = 0;
 const imageShow = document.querySelector('#image-show');
@@ -8,6 +8,7 @@ theImage.setAttribute('id', 'theImage');
 theImage.setAttribute('src', imageList[0].url);
 imageShow.appendChild(theImage);
 
+const imageGalleryMain = document.querySelector('#image-gallery-main');
 const imageDescription = document.querySelector('#image-description');
 const title = document.createElement('h1');
 title.setAttribute('class', 'imageTitle');
@@ -30,8 +31,8 @@ for (let i = 0; i < imageList.length; i++) {
   imgIcons.setAttribute('src', imageList[i].url);
   imgIcons.setAttribute('loading', 'lazy');
   const mouseOn = document.createElement('p');
-  mouseOn.setAttribute ('class', 'notVisible');
-  mouseOn.setAttribute ('id', 'tooltip');
+  mouseOn.setAttribute('class', 'notVisible');
+  mouseOn.setAttribute('id', 'tooltip');
   mouseOn.innerText = imageList[i].title;
   if (i === 0) {
     imgIcons.setAttribute('class', 'selected');
@@ -47,7 +48,7 @@ const theIcons = document.querySelectorAll('#theIcons');
 const deleteTitle = document.querySelector('.imageTitle');
 const deleteDest = document.querySelector('.imageDescription');
 for (let i = 0; i < theIcons.length; i++) {
-    theIcons[i].onclick = () => {
+  theIcons[i].onclick = () => {
     deleteTitle.remove();
     title.innerHTML = imageList[i].title;
     imageDescription.appendChild(title);
@@ -74,7 +75,7 @@ rightButton.onclick = () => {
   deleteDest.remove();
 
   theIcons[counter].setAttribute('class', 'notSelected');
-  
+
   if (counter === imageList.length - 1) {
     counter = 0;
   } else {
@@ -118,29 +119,24 @@ leftButton.onclick = () => {
 };
 
 for (let i = 0; i < theIcons.length; i++) {
-  const tooltip = document.querySelectorAll('#tooltip')
+  const tooltip = document.querySelectorAll('#tooltip');
   theIcons[i].onmouseenter = () => {
-  tooltip[i].setAttribute ('class', 'visible');
-
-  }
-  theIcons[i].onmouseleave = () =>{
-    tooltip[i].setAttribute ('class', 'notVisible');
-  }
+    tooltip[i].setAttribute('class', 'visible');
+  };
+  theIcons[i].onmouseleave = () => {
+    tooltip[i].setAttribute('class', 'notVisible');
+  };
 }
 
-const imageGalleryMain = document.querySelector('#image-gallery-main');
 const bigImage = document.createElement('img');
 theImage.onclick = () => {
-  // let bigImage = theImage.cloneNode(true);
-  let selected = document.querySelector('.selected')
-  let toBigImage = selected.getAttribute('src')
-  bigImage.setAttribute('id','bigImage')
-  bigImage.setAttribute('src', toBigImage)
-  imageGalleryMain.appendChild(bigImage)
+  const selected = document.querySelector('.selected');
+  const toBigImage = selected.getAttribute('src');
+  bigImage.setAttribute('id', 'bigImage');
+  bigImage.setAttribute('src', toBigImage);
+  imageGalleryMain.appendChild(bigImage);
 };
 
 bigImage.onclick = () => {
-  bigImage.remove()
-}
-
-
+  bigImage.remove();
+};
