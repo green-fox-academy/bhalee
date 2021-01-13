@@ -1,4 +1,8 @@
 'use strict';
+const button = document.querySelector('#add-expense');
+const inputName = document.querySelector('#add-name');
+let searchName = '';
+
 function addToList(name, id) {
   let list = document.querySelector('#list');
   let listElem = document.createElement('li');
@@ -16,11 +20,7 @@ function clearList() {
   list.innerHTML = '';
 }
 
-const button = document.querySelector('#add-expense');
-const inputName = document.querySelector('#add-name');
-
 button.onclick = () => {
-
   const xhr = new XMLHttpRequest();
   xhr.onload = () => {
     let list = JSON.parse(xhr.response);
@@ -44,16 +44,13 @@ button.onclick = () => {
     const listedElem = document.querySelectorAll('.resultName');
     for (let i = 0; i < listedElem.length; i++) {
       listedElem[i].onclick = () => {
-
         let searchName = listedElem[i].innerHTML;
         const xhr2 = new XMLHttpRequest();
 
         xhr2.onload = () => {
           let list2 = JSON.parse(xhr2.response);
           for (let t = 0; t < list2.results.length; t++) {
-
             if (searchName === list2.results[t].name) {
-
               for (let index = 0; index < list2.results[t].films.length; index++) {
                 const xhr = new XMLHttpRequest();
                 xhr.onload = () => {
@@ -68,23 +65,17 @@ button.onclick = () => {
                   character.appendChild(forTitle);
                   character.appendChild(fordate);
                 };
-                let method = 'GET';
-                let endpoint = list2.results[t].films[index];
-                xhr.open(method, endpoint);
+                xhr.open('GET', list2.results[t].films[index]);
                 xhr.send();
               }
             }
           }
         };
-        let method2 = 'GET';
-        let endpoint2 = 'http://swapi.dev/api/people/';
-        xhr2.open(method2, endpoint2);
+        xhr2.open('GET', 'http://swapi.dev/api/people/');
         xhr2.send();
       };
     }
   };
-  let method = 'GET';
-  let endpoint = 'http://swapi.dev/api/people/';
-  xhr.open(method, endpoint);
+  xhr.open('GET', 'http://swapi.dev/api/people/');
   xhr.send();
 };
