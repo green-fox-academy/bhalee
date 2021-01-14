@@ -1,7 +1,7 @@
 'use strict';
 let all;
-let params;
-params = window.location.search.substr(1)
+let params = window.location.search.substr(1)
+
 const xhrList = new XMLHttpRequest();
 xhrList.onload = () => {
 

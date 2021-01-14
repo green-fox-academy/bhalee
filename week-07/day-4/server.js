@@ -12,26 +12,22 @@ let conn = mysql.createConnection({
   user: 'root',
   password: 'password',
   database: 'bookinfo',
-  insecureAuth: 'true', //ez akkor, ha minden rendben van es megis auth security errort kaptok
+  insecureAuth: 'true',
 });
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/listAll', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
 app.get('/api/all', (req, res) => {
-  conn.query(
-    `SELECT book_mast.book_name, author.aut_name, category.cate_descrip, publisher.pub_name, book_mast.book_price 
+  let sqlTable = 
+  `SELECT book_mast.book_name, author.aut_name, category.cate_descrip, publisher.pub_name, book_mast.book_price 
   FROM author INNER JOIN book_mast ON author.aut_id = book_mast.aut_id 
   INNER JOIN category ON category.cate_id = book_mast.cate_id 
   INNER JOIN publisher ON publisher.pub_id = book_mast.pub_id 
-  order by author.aut_id;`,
+  order by author.aut_id;`;
+  conn.query(sqlTable,
     (err, rows) => {
-      // console.log(rows);
       if (err) {
         console.log(err.toString());
         res.status(500).json({ error: 'database error' });
@@ -58,10 +54,10 @@ app.get('/api/all', (req, res) => {
           filtered = rows.filter((item) => item.pub_name.toLowerCase().replace(/\s/g, '') === req.query.publisher.toLowerCase().replace(/\s/g, ''));
         }
         if (filter === 'plt') {
-          filtered = rows.filter((item) => item.book_price <= Number(req.query.price));
+          filtered = rows.filter((item) => Number(item.book_price) <= Number(req.query.plt));
         }
         if (filter === 'pgt') {
-          filtered = rows.filter((item) => item.book_price >= Number(req.query.price));
+          filtered = rows.filter((item) => Number(item.book_price) >= Number(req.query.pgt));
         }
       });
 
