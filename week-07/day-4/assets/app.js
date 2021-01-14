@@ -9,7 +9,6 @@ xhrList.onload = () => {
 xhrList.open('GET', '/api/all', true);
 xhrList.send();
 
-
 const xhr2 = new XMLHttpRequest();
 xhr2.onload = () => {
   for (let i = 0; i < all.length; i++) {
@@ -34,7 +33,6 @@ xhr2.onload = () => {
 
     let body = document.querySelector('table');
     body.appendChild(tr);
-
   }
 };
 xhr2.open('GET', '/api/all', true);
