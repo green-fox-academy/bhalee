@@ -57,10 +57,10 @@ app.get('/api/all', (req, res) => {
         if (filter === 'publisher') {
           filtered = rows.filter((item) => item.pub_name.toLowerCase().replace(/\s/g, '') === req.query.publisher.toLowerCase().replace(/\s/g, ''));
         }
-        if (filter === 'maxPrice') {
+        if (filter === 'plt') {
           filtered = rows.filter((item) => item.book_price <= Number(req.query.price));
         }
-        if (filter === 'minPrice') {
+        if (filter === 'pgt') {
           filtered = rows.filter((item) => item.book_price >= Number(req.query.price));
         }
       });

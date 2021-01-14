@@ -1,12 +1,15 @@
 'use strict';
 let all;
-
+let params;
+params = window.location.search.substr(1)
 const xhrList = new XMLHttpRequest();
 xhrList.onload = () => {
+
   all = JSON.parse(xhrList.response);
   console.log(all);
 };
-xhrList.open('GET', '/api/all', true);
+console.log(params);
+xhrList.open('GET', `/api/all?${params}`, true);
 xhrList.send();
 
 const xhr2 = new XMLHttpRequest();
