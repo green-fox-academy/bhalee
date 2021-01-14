@@ -25,15 +25,30 @@ app.get('/listAll', (req,res) => {
 
 
 app.get('/api/all', (req,res) => {
-  
-  conn.query('SELECT book_mast.book_name, author.aut_name, category.cate_descrip, publisher.pub_name, book_mast.book_price FROM author INNER JOIN book_mast ON author.aut_id = book_mast.aut_id INNER JOIN category ON category.cate_id = book_mast.cate_id INNER JOIN publisher ON publisher.pub_id = book_mast.pub_id order by author.aut_id;', (err, rows) => {
+
+  conn.query(`SELECT book_mast.book_name, author.aut_name, category.cate_descrip, publisher.pub_name, book_mast.book_price 
+  FROM author INNER JOIN book_mast ON author.aut_id = book_mast.aut_id 
+  INNER JOIN category ON category.cate_id = book_mast.cate_id 
+  INNER JOIN publisher ON publisher.pub_id = book_mast.pub_id 
+  order by author.aut_id;`, (err, rows) => {
     // console.log(rows);
     if(err) {
       console.log(err.toString());
       res.status(500).json({'error': 'database error'});
       return;
     }
-    return res.send(rows);
+    
+    let filtered = {};
+    Object.keys(req.query).forEach(filter => {
+      if (filter === 'category'){
+        filtered = rows.filter(item => item.cate_descrip.toLowerCase() === req.query.category.toLowerCase())
+      }
+      if (filter === 'author'){
+        filtered = rows.filter(item => item.aut_name.toLowerCase() === req.query.author.toLowerCase())
+      }
+
+    })
+    res.send(filtered);
   });
 });
 
