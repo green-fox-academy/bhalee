@@ -35,7 +35,6 @@ app.get('/posts', (req,res) => {
   })
 })
 
-
 app.post('/posts', (req,res) => {
   conn.query(`INSERT INTO posts (title,url,timestamp,score)
   VALUES (?,?,now(),0);`, [req.body.title, req.body.url, req.body.score], (err, rows) => {
@@ -83,6 +82,7 @@ res.status(200).json(req.body);
 })
 
 app.delete('/posts/:id', (req,res) => {
+  let deletedPost = req.body;
   let status = 'inactive';
   let id = req.params.id;
   conn.query(`UPDATE posts SET status = (?) WHERE id = (?);`,[status, id], (err, rows) => {
@@ -90,7 +90,7 @@ app.delete('/posts/:id', (req,res) => {
       res.status(500).json(err);
       return;
 }
-res.status(200).json(req.body);
+res.status(200).json(deletedPost);
 })
 })
 

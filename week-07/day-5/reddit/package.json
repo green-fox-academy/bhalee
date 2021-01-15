@@ -8,5 +8,6 @@
     "start": "node server.js"
   },
   "author": "bhalee",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {}
 }
