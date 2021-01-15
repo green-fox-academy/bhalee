@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql');
 app.use(express.json());
-app.use(express.static('assets'));
+app.use(express.static('public'));
 
 let conn = mysql.createConnection({
   host: 'localhost',
