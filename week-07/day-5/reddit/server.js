@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/posts', (req,res) => {
-  conn.query('SELECT * FROM posts', (err, rows) => {
+  conn.query(`SELECT * FROM posts WHERE status = 'active'`, (err, rows) => {
     if(err) {
       res.status(500).json(err);
       return;
@@ -83,16 +83,15 @@ res.status(200).json(req.body);
 })
 
 app.delete('/posts/:id', (req,res) => {
-  let deletedData = req.body;
+  let status = 'inactive';
   let id = req.params.id;
-  conn.query(`DELETE FROM posts WHERE id = (?);`,[id], (err, rows) => {
+  conn.query(`UPDATE posts SET status = (?) WHERE id = (?);`,[status, id], (err, rows) => {
     if(err) {
       res.status(500).json(err);
       return;
 }
-res.status(200).json(deletedData);
+res.status(200).json(req.body);
 })
 })
-
 
 app.listen(3000);
