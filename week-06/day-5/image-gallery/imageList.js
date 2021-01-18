@@ -1,3 +1,4 @@
+
 export let imageList = [
   {
     url: '/img/random1.jpg',
@@ -215,5 +216,3 @@ export let imageList = [
     dest: `Field ipsum, dolor sit amet consectetur adipisicing elit. Voluptate modi deleniti iste laboriosam quasi dolores magnam ipsum eligendi obcaecati blanditiis repellendus id saepe tempore, asperiores eaque maxime exercitationem ducimus nisi.`,
   },
 ];
-
-// module.exports = imageList;

@@ -30,6 +30,7 @@ for (let i = 0; i < imageList.length; i++) {
   imgIcons.setAttribute('id', 'theIcons');
   imgIcons.setAttribute('src', imageList[i].url);
   imgIcons.setAttribute('loading', 'lazy');
+
   const mouseOn = document.createElement('p');
   mouseOn.setAttribute('class', 'notVisible');
   mouseOn.setAttribute('id', 'tooltip');
@@ -45,17 +46,11 @@ for (let i = 0; i < imageList.length; i++) {
 }
 
 const theIcons = document.querySelectorAll('#theIcons');
-const deleteTitle = document.querySelector('.imageTitle');
-const deleteDest = document.querySelector('.imageDescription');
+
 for (let i = 0; i < theIcons.length; i++) {
   theIcons[i].onclick = () => {
-    deleteTitle.remove();
     title.innerHTML = imageList[i].title;
-    imageDescription.appendChild(title);
-
-    deleteDest.remove();
     description.innerHTML = imageList[i].dest;
-    imageDescription.appendChild(description);
 
     theIcons[i].setAttribute('class', 'selected');
     theIcons[counter].setAttribute('class', 'notSelected');
@@ -68,51 +63,9 @@ for (let i = 0; i < theIcons.length; i++) {
     theImage.setAttribute('src', toShow);
   };
 }
-function removeText(){
-  deleteTitle.remove();
-  deleteDest.remove();
-}
-function buttonsClick(){
-  title.innerHTML = imageList[counter].title;
-  imageDescription.appendChild(title);
 
-  description.innerHTML = imageList[counter].dest;
-  imageDescription.appendChild(description);
-
-  theIcons[counter].setAttribute('class', 'selected');
-  theImage.setAttribute('src', imageList[counter].url);
-  imageShow.appendChild(theImage);
-}
-
-const rightButton = document.querySelector('#right-button');
-rightButton.onclick = () => {
-  removeText();
-
-  theIcons[counter].setAttribute('class', 'notSelected');
-
-  if (counter === imageList.length - 1) {
-    counter = 0;
-  } else {
-    counter += 1;
-  }
-  buttonsClick()
-};
-
-const leftButton = document.querySelector('#left-button');
-leftButton.onclick = () => {
-  removeText();
-  theIcons[counter].setAttribute('class', 'notSelected');
-
-  if (counter === 0) {
-    counter = imageList.length - 1;
-  } else {
-    counter -= 1;
-  }
-  buttonsClick()
-};
-
+const tooltip = document.querySelectorAll('#tooltip');
 for (let i = 0; i < theIcons.length; i++) {
-  const tooltip = document.querySelectorAll('#tooltip');
   theIcons[i].onmouseenter = () => {
     tooltip[i].setAttribute('class', 'visible');
   };
@@ -120,6 +73,37 @@ for (let i = 0; i < theIcons.length; i++) {
     tooltip[i].setAttribute('class', 'notVisible');
   };
 }
+
+function buttonsClick() {
+  title.innerHTML = imageList[counter].title;
+  description.innerHTML = imageList[counter].dest;
+  theImage.setAttribute('src', imageList[counter].url);
+  theIcons[counter].setAttribute('class', 'selected');
+}
+
+const rightButton = document.querySelector('#right-button');
+rightButton.onclick = () => {
+  theIcons[counter].setAttribute('class', 'notSelected');
+
+  if (counter === imageList.length - 1) {
+    counter = 0;
+  } else {
+    counter += 1;
+  }
+  buttonsClick();
+};
+
+const leftButton = document.querySelector('#left-button');
+leftButton.onclick = () => {
+  theIcons[counter].setAttribute('class', 'notSelected');
+
+  if (counter === 0) {
+    counter = imageList.length - 1;
+  } else {
+    counter -= 1;
+  }
+  buttonsClick();
+};
 
 const bigImage = document.createElement('img');
 theImage.onclick = () => {

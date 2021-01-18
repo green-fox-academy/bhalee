@@ -2,7 +2,6 @@ body {
   background-image: linear-gradient(to right, grey 0%, #D0D0D0 50%,  grey 100%);
   display: flex;
   justify-content: center;
-
 }
 
 #image-gallery-main {
@@ -18,7 +17,6 @@ body {
   width: fit-content;
   margin-top: 10%;
   align-content: center;
-
 }
 
 #image-gallery-slide {
