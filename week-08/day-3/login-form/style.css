@@ -23,8 +23,9 @@ input{
   margin-bottom: 10px;
   width: 400px;
   height: 40px;
-  border: solid 1px lightgray;
+  border: 1px solid lightgray;
   border-radius: 4px;
+  font-size: 25px;
 }
 #forgot-password{
   text-decoration: none;
@@ -40,4 +41,14 @@ button{
   font-size: 18px;
   border-radius: 25px;
   margin-top: 50px;
+  outline: none;
+}
+#show-password{
+align-self: flex-end;
+height: 30px;
+width: 30px;
+margin-top: -45px;
+margin-bottom: 45px;
+margin-right: 15px;
+opacity: 0.3;
 }
