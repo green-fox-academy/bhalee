@@ -1,0 +1,49 @@
+.container{
+  display: grid;
+  gap: 5px;
+  max-width: 100%;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  background-color: black;
+  grid-template-areas:
+  "element1 element2 element2"
+  "element3 element2 element2"
+  "element4 element5 element6";
+  height: 600px;
+}
+
+.element1{
+  grid-area: element1;
+  background-color: purple;
+}
+.element2{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  grid-area: element2;
+  background-color: green;
+}
+.element3{
+  grid-area: element3;
+  background-color: purple;
+}
+.element4{
+  grid-area: element4;
+  background-color: purple;
+}
+.element5{
+  grid-area: element5;
+  background-color: purple;
+}
+.element6{
+  grid-area: element6;
+  background-color: purple;
+}
+.element7{
+  background-color: yellow;
+  width: 80%;
+  height: 70%;
+
+}
