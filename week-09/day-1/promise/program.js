@@ -2,7 +2,7 @@
 // function timer(callback){
 // setTimeout( ()=>{
 // callback()
-// },300)
+// },3000)
 // }
 
 // function log(){
