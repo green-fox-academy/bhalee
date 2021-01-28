@@ -2,12 +2,16 @@
   "name": "reddit",
   "version": "1.0.0",
   "description": "reddit clone",
-  "main": "app.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "author": "bhalee",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "chain": "^0.1.3",
+    "mocha": "^8.2.1",
+    "supertest": "^6.1.3"
+  }
 }

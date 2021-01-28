@@ -4,7 +4,8 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql');
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('assets'));
+// app.use(express.static('public'));
 
 let conn = mysql.createConnection({
   host: 'localhost',
@@ -21,12 +22,13 @@ conn.connect((err) => {
   console.log('Connected to mysql');
 });
 
-app.get('/hello', (req, res) => {
-  res.send('hello world');
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
 });
 
+
 app.get('/posts', (req, res) => {
-  conn.query(`SELECT title, url, timestamp, score, owner FROM posts WHERE status = 'active'`, (err, rows) => {
+  conn.query(`SELECT title, url, timestamp, score, owner FROM posts WHERE status = 'active' ORDER BY score DESC;`, (err, rows) => {
     ifError(res, err);
     res.status(200).json(rows);
   });
@@ -247,3 +249,4 @@ function newVote(setScore, setVote, voteId, postId, userId, res, conn){
     });
   });
 }
+module.exports = app;
