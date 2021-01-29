@@ -33,8 +33,8 @@ postsSelector.addEventListener('click', (event) => {
         let votes = document.querySelector(`#votes-${getId}`);
         votes.innerHTML = response[0].score;
         let downArrow = document.getElementsByClassName(`down-arrow ${getId}`);
-        console.log(downArrow[0]);
-        if (response[0].vote === 1) {
+        
+        if (response[0].vote === 1 || response[0].vote === undefined) {
           event.target.setAttribute('src', '/upvoted.png');
           downArrow[0].setAttribute('src', '/downvote.png');
         } else {
@@ -50,7 +50,7 @@ postsSelector.addEventListener('click', (event) => {
         let votes = document.querySelector(`#votes-${getId}`);
         votes.innerHTML = response[0].score;
         let upArrow = document.getElementsByClassName(`up-arrow ${getId}`);
-        if (response[0].vote === -1) {
+        if (response[0].vote === -1 || response[0].vote === undefined) {
           event.target.setAttribute('src', '/downvoted.png');
           upArrow[0].setAttribute('src', '/upvote.png');
         } else {
@@ -64,32 +64,32 @@ postsSelector.addEventListener('submit', (event) => {
   event.preventDefault();
   const newPostUrl = document.querySelector('#add-url').value;
   const newPostTitle = document.querySelector('#add-title').value;
+
   let data = {
     title: newPostTitle,
     url: newPostUrl,
   };
-  fetch(`/posts`, { method: 'POST', body: JSON.stringify({ title: newPostTitle, url: newPostUrl }), headers: { user_id: '2', Accept: 'application/json', 'Content-Type': 'application/json' } })
+
+  fetch(`/posts`, { method: 'POST', body: JSON.stringify(data), headers: { user_id: '2', Accept: 'application/json', 'Content-Type': 'application/json' } })
     .then(function (res) {
       return res.json();
     })
     .then((data) => {
-      let x = document.createElement('STYLE');
-      let t = document.createTextNode(`
-      @keyframes posts {
-        from {top: -140px;}
-        to {top: 0px;}
-      }
-    `);
-      x.appendChild(t);
-      document.head.appendChild(x);
+      let style = document.createElement('STYLE');
+      let keyframes = document.createTextNode(`@keyframes posts 
+      {from {top: -140px;}
+        to {top: 0px;} }`);
+
+      style.appendChild(keyframes);
+      document.head.appendChild(style);
       addPost('/upvote.png', '/downvote.png', data[0].score, data[0].owner, data[0].timestamp, data[0].title, data[0].url, data[0].post_id, true);
-      return t;
+      return keyframes;
     })
-    .then((t) => {
+    .then((keyframes) => {
       setTimeout(() => {
         const form = document.querySelector('form');
         form.reset();
-        t.remove();
+        keyframes.remove();
         let newPost = document.querySelector('.new-post-box');
         newPost.setAttribute('class', 'post-box');
       }, 5000);
@@ -215,23 +215,25 @@ loginDiv.addEventListener('click', (event) => {
     const activeForm = document.querySelector('.form');
     activeForm.style.display = 'flex';
 
-    let x = document.createElement('STYLE');
-    let t = document.createTextNode(`
+    let style = document.createElement('STYLE');
+    let keyframes = document.createTextNode(`
     @keyframes form {
       from {top: -400px;}
       to {top: 0px;}
     }
     @keyframes posts {
-      from {top: -250px;}
+      from {top: -300px;}
       to {top: 0px;}
     }
   `);
-    let posts = document.querySelector('.posts')
-    posts.style.top = '500px';
-    x.appendChild(t);
-    document.head.appendChild(x);
-    setTimeout(()=>{
-      t.remove()
-    },5000)
+    style.appendChild(keyframes);
+    document.head.appendChild(style);
+
+    let posts = document.querySelector('.posts');
+    posts.style.top = '550px';
+
+    setTimeout(() => {
+      keyframes.remove();
+    }, 5000);
   }
 });

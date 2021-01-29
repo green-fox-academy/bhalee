@@ -87,20 +87,12 @@ body {
 }
 .add-post{
   display: flex;
+  justify-content: center;
   max-width: 1200px;
   position: absolute;
-  top: 220px;
+  top: 250px;
   left: 5%;
   right: 5%;
-  /* background-color: whitesmoke;
-  -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  border-radius: 5px;
-  animation: form 5s;
-  animation-duration: 4s;
-  animation-timing-function: ease; */
 }
 label{
   margin-top: 20px;
@@ -122,11 +114,12 @@ form{
 input{
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 400px;
+  width: 200px;
   height: 40px;
   border: 1px solid lightgray;
   border-radius: 4px;
   font-size: 25px;
+  cursor: pointer;
 }
 button{
   align-self: flex-start;
@@ -150,16 +143,6 @@ button{
   font-size: 20px;
 }
 
-/* .logo{
-  position: absolute;
-  height: 60px;
-  z-index: 4;
-  top: 170px;
-  left: 10%;
-  border: 3px solid rgb(238, 80, 18);
-  border-radius: 100px;
-  box-shadow: 5px 5px 0px 3px rgba(0, 0, 0, 0.1);
-} */
 .posts {
   position: absolute;
   top: 250px;
@@ -171,7 +154,6 @@ button{
   display: grid;
   position: relative;
   grid-template-columns: 80px 1fr;
-  /* height: 160px; */
   background-color: whitesmoke;
   -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
@@ -179,26 +161,23 @@ button{
   margin-bottom: 30px;
   border-radius: 5px;
   min-width: 400px;
-  animation: posts 5s;
-  animation-duration: 4s;
+  animation: posts 4s;
   animation-timing-function: ease;
 }
 
 .new-post-box {
   z-index: 2;
   position: relative;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  min-width: 400px;
   display: grid;
   grid-template-columns: 80px 1fr;
-  /* height: 160px; */
   background-color: whitesmoke;
   -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  border-radius: 5px;
-  min-width: 400px;
-  animation: newpost 5s;
-  animation-duration: 4s;
+  animation: newpost 4s;
   animation-timing-function: ease;
 }
 @keyframes newpost {
@@ -213,7 +192,6 @@ button{
   align-items: center;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  /* background-color: rgb(219, 219, 219); */
   background-color: #333333;
   color: whitesmoke;
   font-size: 30px;
@@ -248,7 +226,7 @@ button{
   height: 400px;
   background-color: whitesmoke;
   max-width: 400px;
-  top: 220px;
+  top: 250px;
   left: 1350px;
   border-radius: 5px;
   -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
@@ -287,7 +265,6 @@ button{
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
   border-radius: 5px;
-  animation: form 5s;
-  animation-duration: 4s;
+  animation: form 4s;
   animation-timing-function: ease;
 }
