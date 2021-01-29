@@ -17,23 +17,21 @@
       <!-- <img class="logo" src="https://i.redd.it/kd1z9uokqci21.png" alt=""> -->
     </div>
     <div class="container">
+      <div class=add-post>
+        <form action="/" method="post" class="form">
+          <label for="addtitle">Title</label>
+          <textarea name="" id="add-title" cols="30" rows="2" class="input" maxlength="180" required></textarea>
+          <label for="addurl">URL:</label>
+          <input type="url" name="addurl" id="add-url" class="input" required>
+        <input type="submit" value="Send Post" id="send-post">
+        </form>
+      </div>
       <div class="posts">
-        <div class="post-box">
-          <div class="vote-buttons">
-            <img class="up-arrow" src="upvote.png" alt="" />
-            <p>266</p>
-            <img class="down-arrow" src="downvote.png" alt="" />
-          </div>
-          <div class="post-content">
-            <div class="post-info">
-              <p>posted by</p>
-              <a class="post-owner" href="">someOne</a>
-              <p>2 days ago</p>
-            </div>
-            <a class="post-title" href="">OMG bla bla bla lkas basuduwiasjdj jasidjais djoasdk sdf sdfsdffr f erffg fdg dfg fg asdkp ajs d aisjd random posts title !!!</a>
-          </div>
+      </div>
+      <div class="login-info">
+        <div class="new-post-button">
+          New Post
         </div>
-        <div class="post-box"></div>
       </div>
     </div>
     <script src="app.js"></script>
