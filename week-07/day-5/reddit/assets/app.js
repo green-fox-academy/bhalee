@@ -60,6 +60,7 @@ postsSelector.addEventListener('click', (event) => {
       });
   }
 });
+
 postsSelector.addEventListener('submit', (event) => {
   event.preventDefault();
   const newPostUrl = document.querySelector('#add-url').value;

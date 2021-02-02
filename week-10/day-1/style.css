@@ -1,0 +1,87 @@
+#fox-player{
+  display: flex;
+  flex-direction: row;
+  background: rgb(238, 238, 238);
+  height: 500px;
+  border-radius: 10px;
+
+}
+
+#control-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(247, 247, 247);
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+}
+.control-button{
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.progress {
+  display: flex;
+  flex-direction:row;
+  width: 1px;
+  height: 3px;
+  background: #006b5a;
+  transition: width 0.1s linear;
+}
+.showTimes{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.togglePlay {
+  height: 25px;
+  width: 25px;
+}
+
+
+.slider {
+  -webkit-appearance: none;  
+  appearance: none;
+  width: 100%;
+  min-width: 120px;
+  height: 18px; 
+  background: #d3d3d3; 
+  outline: none; 
+  opacity: 0.7; 
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius: 50px;
+}
+
+.slider:hover {
+  opacity: 1; 
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 25px; 
+  height: 25px; 
+  background: #4CAF50; 
+  cursor: pointer; 
+  border-radius: 50px;
+
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; 
+  height: 25px; 
+  background: #4CAF50; 
+  cursor: pointer; 
+  border-radius: 50px;
+}
+.volume{
+max-width: 100px;
+min-width: 60px;
+margin-left: 10px;
+margin-right: 10px;
+}

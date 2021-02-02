@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FoxPlayer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+
+    <div id="fox-player">
+      <audio id="audio" src="./music/Organoid_-_09_-_Purple_Drift.mp3" type="audio/mpeg"></audio>
+
+      <div id="main">
+      <div id="playlists">
+        
+      </div>
+      <div id="current-playlist"></div>
+      </div>
+      <div id="control-footer">
+        <img src="./img/rewind.svg" alt="" id="rewind" class="control-button" />
+        <img src="./img/play.svg" alt="" id="play-button" class="control-button" />
+        <img src="./img/forward.svg" alt="" id="forward" class="control-button" />
+        <p id="current-time" class="showTimes">0:0</p>
+        <input type="range" name="slider" id="slider" class="slider">
+        <p id="duration-time" class="showTimes"></p>
+        <img src="./img/volume.svg" alt="" class="control-button">
+        <input type="range" name="volume" id="volume" class="slider volume">
+        </div>
+      </div>
+   
+    </div>
+
+
+    <script src="control.js"></script>
+  </body>
+</html>
